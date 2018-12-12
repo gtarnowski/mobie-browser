@@ -1,0 +1,37 @@
+@import '../../index';
+
+.ListingItem {
+  width: 450px;
+  height: 250px;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: max-content 1fr;
+  background-color: @white;
+  box-shadow: @mighty-shadows;
+
+  .thumbnail img {
+    height: 250px;
+    width: 180px;
+  }
+
+  .details {
+    padding: 16px;
+    display: grid;
+    grid-template-rows: repeat(4, max-content);
+    grid-row-gap: 10px;
+
+    .title {
+      font-weight: 800;
+    }
+
+    hr {
+      border-color: #e0e0e0;
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: @deep-fog;
+  }
+}

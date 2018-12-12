@@ -1,0 +1,34 @@
+@dark-gray: #333;
+@white: #fff;
+
+.SearchBar {
+  display: grid;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  background-color: @dark-gray;
+  color: @white;
+
+  form {
+    display: grid;
+    grid-template-columns: 300px 50px repeat(3, min-content);
+    grid-gap: 15px;
+    height: 72px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.SearchRadio {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, max-content);
+
+  input {
+    margin: 0 !important;
+  }
+
+  * {
+    cursor: pointer;
+  }
+}

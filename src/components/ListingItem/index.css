@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+    url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+    url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+    url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+    url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
+}
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+* {
+  font-family: 'Open Sans', sans-serif !important;
+}
+.ListingItem {
+  width: 450px;
+  height: 250px;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: max-content 1fr;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(128, 128, 128, 0.2);
+}
+.ListingItem .thumbnail img {
+  height: 250px;
+  width: 180px;
+}
+.ListingItem .details {
+  padding: 16px;
+  display: grid;
+  grid-template-rows: repeat(4, max-content);
+  grid-row-gap: 10px;
+}
+.ListingItem .details .title {
+  font-weight: 800;
+}
+.ListingItem .details hr {
+  border-color: #e0e0e0;
+  width: 100%;
+}
+.ListingItem:hover {
+  cursor: pointer;
+  box-shadow: 0 3px 20px 0 rgba(128, 128, 128, 0.2);
+}
