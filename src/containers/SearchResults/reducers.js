@@ -11,8 +11,10 @@ export const initialState = fromJS({
 export const methods = {
   [searchResults]: (state, payload) => state
     .set('results', payload),
-  [searchResultsError]: (state, payload) => state
-    .set('error', payload),
+  [searchResultsError]: (state, payload) => {
+    console.log(payload)
+    return state.set('error', payload)
+  },
   [searchResultsLoading]: (state, payload) => state
     .set('loading', payload),
 };

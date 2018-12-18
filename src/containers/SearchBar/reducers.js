@@ -4,7 +4,7 @@ import { searchBarFilter, searchBarValue } from './actions';
 
 export const initialState = fromJS({
   filter: 'title',
-  searchValue: '123123',
+  searchValue: '',
 });
 
 export const methods = {

@@ -3,7 +3,6 @@ import createSagaMiddleware from 'redux-saga';
 
 // Reducers
 import searchBar from '../containers/SearchBar/reducers';
-import searchPage from '../components/SearchPage/reducers';
 import searchResults from '../containers/SearchResults/reducers'
 
 // Sagas
@@ -11,7 +10,6 @@ import searchBarSagas from '../containers/SearchBar/saga';
 
 const combinedReducers = combineReducers({
   searchBar,
-  searchPage,
   searchResults,
 });
 

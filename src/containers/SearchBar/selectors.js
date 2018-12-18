@@ -13,6 +13,7 @@ const makeSelectSearchValue = () => createSelector(
 );
 
 export {
+  selectSearchBarDomain,
   makeSelectFilter,
   makeSelectSearchValue,
 }
