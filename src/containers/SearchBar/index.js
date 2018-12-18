@@ -1,13 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SearchInput from '../SearchInput';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { compose } from 'redux';
+
 import { RADIO_FILTERS } from '../../constants';
+import { searchBarValue, searchBarFilter, searchBarSubmitQuery } from './actions';
+
+import SearchInput from '../../components/SearchInput';
 import './index.css';
+import { makeSelectFilter, makeSelectSearchValue } from './selectors';
 
 const SearchBar = ({ onChange, onSubmit, onCheck, searchValue, filter }) => {
+  const onOverrideSubmit = e => {
+    e.preventDefault();
+    onSubmit();
+  };
+
   return (
     <div className="SearchBar">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onOverrideSubmit}>
         <SearchInput searchValue={searchValue} onChange={onChange} />
         <div>
           <button type="submit">Search</button>
@@ -39,4 +51,20 @@ SearchBar.propTypes = {
   filter: PropTypes.string,
 };
 
-export default SearchBar;
+const mapStateToProps = createStructuredSelector({
+  searchValue: makeSelectSearchValue(),
+  filter: makeSelectFilter(),
+});
+
+const mapDispatchToProps = dispatch => ({
+  onChange: inputValue => dispatch(searchBarValue(inputValue)),
+  onCheck: radioFilterValue => dispatch(searchBarFilter(radioFilterValue)),
+  onSubmit: () => dispatch(searchBarSubmitQuery()),
+});
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
+
+export default compose(withConnect)(SearchBar);

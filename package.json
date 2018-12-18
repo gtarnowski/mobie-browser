@@ -16,6 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.0.20",
     "animate.css": "^3.7.0",
     "babel-polyfill": "^6.26.0",
+    "immutable": "^4.0.0-rc.12",
     "less": "^2.7.3",
     "lodash": "^4.17.10",
     "node-less-chokidar": "^0.3.1",
@@ -25,9 +26,14 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-fontawesome": "^1.6.1",
+    "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^1.1.4",
+    "redux": "^4.0.1",
+    "redux-act": "^1.7.4",
+    "redux-saga": "^0.16.2",
+    "reselect": "^4.0.0",
     "reset-css": "^4.0.1"
   },
   "devDependencies": {

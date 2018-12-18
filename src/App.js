@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
-import SearchPage from './components/SearchPage'
+import React  from 'react';
+import SearchPage from './components/SearchPage';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <SearchPage />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <SearchPage />
+  </div>
+);
 
 export default App;
