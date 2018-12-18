@@ -40,6 +40,8 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "12.1.0",
@@ -49,6 +51,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "font-awesome": "^4.7.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "less-loader": "^4.1.0",
     "regenerator-runtime": "^0.13.1"
@@ -58,5 +61,12 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "resetMocks": true,
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js"
+  }
 }

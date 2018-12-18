@@ -1,24 +1,24 @@
 import { createSelector } from 'reselect';
-import { searchResultsError } from './actions';
+import { fromJS } from 'immutable';
 
-const selectSearchResultsDomain = state => state.searchResults;
+const selectSearchResultsDomain = state => fromJS(state.searchResults);
 
 const makeSelectLoadingState = () =>
   createSelector(
     selectSearchResultsDomain,
-    state => state.get('loading'),
+    state => state && state.get('loading'),
   );
 
 const makeSelectErrorState = () =>
   createSelector(
     selectSearchResultsDomain,
-    state => state.get('error'),
+    state => state && state.get('error'),
   );
 
 const makeSelectSearchResults = () =>
   createSelector(
     selectSearchResultsDomain,
-    state => state.get('results')
+    state => state && state.get('results')
   );
 
 export { makeSelectLoadingState, makeSelectErrorState, makeSelectSearchResults };

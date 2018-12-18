@@ -11,7 +11,7 @@ import SearchInput from '../../components/SearchInput';
 import './index.css';
 import { makeSelectFilter, makeSelectSearchValue } from './selectors';
 
-const SearchBar = ({ onChange, onSubmit, onCheck, searchValue, filter }) => {
+export const SearchBar = ({ onChange, onSubmit, onCheck, searchValue, filter }) => {
   const onOverrideSubmit = e => {
     e.preventDefault();
     onSubmit();
@@ -56,7 +56,7 @@ const mapStateToProps = createStructuredSelector({
   filter: makeSelectFilter(),
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onChange: inputValue => dispatch(searchBarValue(inputValue)),
   onCheck: radioFilterValue => dispatch(searchBarFilter(radioFilterValue)),
   onSubmit: () => dispatch(searchBarSubmitQuery()),

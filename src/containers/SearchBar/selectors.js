@@ -1,15 +1,16 @@
 import { createSelector } from 'reselect';
+import { fromJS } from 'immutable';
 
-const selectSearchBarDomain = state => state.searchBar;
+const selectSearchBarDomain = state => fromJS(state.searchBar);
 
 const makeSelectFilter = () => createSelector(
   selectSearchBarDomain,
-  state => state.get('filter')
+  state => state && state.get('filter')
 );
 
 const makeSelectSearchValue = () => createSelector(
   selectSearchBarDomain,
-  state => state.get('searchValue')
+  state => state && state.get('searchValue')
 );
 
 export {
